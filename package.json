@@ -1,0 +1,25 @@
+{
+  "name": "mattibotti",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "chat",
+    "bot",
+    "matti"
+  ],
+  "author": "Juha Mustonen",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.10.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-require": "^1.0.1",
+    "binary-search-tree": "^0.2.6",
+    "fuzzyset.js": "0.0.1",
+    "snowball-stemmers": "^0.6.0"
+  }
+}
