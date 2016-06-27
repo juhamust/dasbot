@@ -1,16 +1,14 @@
 {
-  "name": "mattibotti",
+  "name": "dasbot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
+    "start": "node index.js"
   },
   "keywords": [
     "chat",
     "bot",
-    "matti"
   ],
   "author": "Juha Mustonen",
   "license": "MIT",
