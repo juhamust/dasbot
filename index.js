@@ -9,10 +9,13 @@ var material = [
   ['kisatessa ei saa huijata', 'ei tietenkään!'],
   ['missä seppo on?', 'ei tietoa'],
   ['syömään!', 'nälkä!'],
+  ['mennään syömään!', 'soppaa!'],
   ['missä seppo on?', 'huutele jos löytäisit'],
   ['missä kisuli on?', 'huutele jos löytäisit'],
   ['missä kissa on?', 'ei tietoa kissasta'],
   ['mikä sää?', 'mikäs tässä paistatellessa'],
+  ['kurja sää', 'aika kehno'],
+  ['vesisade', 'mälsää'],
 ];
 
 material.forEach(function(pair) {
@@ -25,3 +28,5 @@ console.log(bot.answer('minulla on matoja'));
 console.log(bot.answer('älä kiusaa!'));
 console.log(bot.answer('mihin syömään?'));
 console.log(bot.answer('mikä sää?'));
+console.log(bot.answer('ajatuksia säästä?'));
+console.log(bot.answer('vettä sataa'));
