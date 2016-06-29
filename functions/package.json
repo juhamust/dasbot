@@ -1,0 +1,23 @@
+{
+  "name": "dasfunc",
+  "version": "0.1.0",
+  "description": "Serverless functions for Dasbot chatbot",
+  "main": "index.js",
+  "private": true,
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chatbot",
+    "serverless",
+    "functions"
+  ],
+  "author": "Juha Mustonen",
+  "license": "MIT",
+  "dependencies": {
+    "daslib": "file:../lib/daslib"
+  }
+}

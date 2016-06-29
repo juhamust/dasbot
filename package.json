@@ -1,24 +1,46 @@
 {
   "name": "dasbot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "keywords": [
-    "chat",
-    "bot"
-  ],
-  "author": "Juha Mustonen",
+  "version": "0.0.1",
+  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "author": "me",
   "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "scripts": {
+    "test": "export NODE_ENV=test && ava",
+    "test:watch": "ava --watch",
+    "postinstall": "npm link ./libs/daslib && cd functions && npm link ../libs/daslib"
+  },
   "dependencies": {
+    "aws-sdk": "^2.4.4",
     "babel-core": "^6.10.4",
     "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.11.0",
     "babel-register": "^6.9.0",
-    "babel-require": "^1.0.1",
-    "binary-search-tree": "^0.2.6",
-    "fuzzyset.js": "0.0.1",
-    "snowball-stemmers": "^0.6.0"
+    "babelify": "^7.3.0",
+    "serverless-optimizer-plugin": "^2.5.1",
+    "shortid": "^2.2.6"
+  },
+  "ava": {
+    "files": [
+      "functions/**/test.js"
+    ],
+    "source": [
+      "**/*.{js}"
+    ],
+    "tap": false,
+    "failFast": true,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "browserify": "^13.0.1",
+    "proxyquire": "^1.7.10"
   }
 }

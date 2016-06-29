@@ -1,0 +1,26 @@
+{
+  "name": "daslib",
+  "version": "0.1.0",
+  "description": "Shared library for Dasbot",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "ava"
+  },
+  "keywords": [
+    "daslib",
+    "chatbot"
+  ],
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "author": "Juha Mustonen",
+  "license": "MIT",
+  "dependencies": {
+    "binary-search-tree": "^0.2.6",
+    "fuzzyset.js": "0.0.1",
+    "snowball-stemmers": "^0.6.0"
+  }
+}

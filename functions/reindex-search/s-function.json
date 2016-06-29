@@ -1,0 +1,50 @@
+{
+  "name": "reindex-search",
+  "runtime": "nodejs4.3",
+  "description": "Reindex the CloudSearch documents",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 60,
+  "memorySize": 1024,
+  "authorizer": {},
+  "custom": {
+    "optimize": {
+      "exclude": [ "aws-sdk" ],
+      "require": ["daslib"],
+      "excludePatterns": [],
+      "transforms": [{
+        "name": "babelify",
+        "opts": {
+          "presets": [
+            "stage-2",
+            "es2015"
+          ]
+        }
+      }]
+    },
+    "includePaths": [
+      "node_modules/daslib"
+    ]
+  },
+  "endpoints": [],
+  "events": [{
+    "name" : "dynamoStorage",
+    "type": "dynamodbstream",
+    "config": {
+      "streamArn": "arn:aws:dynamodb:eu-west-1:869231578214:table/dasbot-input/stream/2016-07-05T17:52:44.139",
+      "startingPosition": "TRIM_HORIZON",
+      "batchSize": 50,
+      "enabled": true
+    }
+  }],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

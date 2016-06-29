@@ -1,0 +1,70 @@
+{
+  "name": "post-message",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: dasbot",
+  "customName": false,
+  "customRole": false,
+  "handler": "post-message/handler.handler",
+  "timeout": 6,
+  "memorySize": 1024,
+  "authorizer": {},
+  "custom": {
+    "optimize": {
+      "exclude": [ "aws-sdk" ],
+      "require": ["daslib"],
+      "excludePatterns": [],
+      "transforms": [{
+        "name": "babelify",
+        "opts": {
+          "presets": [
+            "stage-2",
+            "es2015"
+          ]
+        }
+      }]
+    },
+    "includePaths": [
+      "node_modules/daslib"
+    ]
+  },
+  "endpoints": [
+    {
+      "path": "message",
+      "method": "POST",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": {
+        "application/json": "{\"data\": $input.json('$') }",
+        "application/x-www-form-urlencoded": "{\"urldata\": \"$input.path('$')\" }"
+      },
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {
+            "application/json;charset=UTF-8": "Empty"
+          },
+          "responseTemplates": {
+            "application/json;charset=UTF-8": ""
+          }
+        }
+      }
+    }
+  ],
+  "events": [],
+  "environment": {
+    "SERVERLESS_PROJECT": "${project}",
+    "SERVERLESS_STAGE": "${stage}",
+    "SERVERLESS_REGION": "${region}"
+  },
+  "vpc": {
+    "securityGroupIds": [],
+    "subnetIds": []
+  }
+}

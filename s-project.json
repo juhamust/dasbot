@@ -1,0 +1,12 @@
+{
+  "name": "dasbot",
+  "custom": { },
+  "plugins": [
+    "serverless-optimizer-plugin"
+  ],
+  "version": "0.0.1",
+  "profile": "serverless-v0.5.6",
+  "location": "https://github.com/juhamust/dashbot",
+  "author": "Juha Mustonen",
+  "description": "Simple Chatbot living in Serverless environment"
+}
